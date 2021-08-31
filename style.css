@@ -1,5 +1,5 @@
 :root {
-	--primary-color: dodgerblue;
+	--primary-color: rgb(255, 30, 79);
 	--font-color: white;
   }
   
@@ -104,7 +104,6 @@
   .progress-range:hover {
 	  height: 10px;
   }
-
   
   .progress-bar {
 	background: var(--primary-color);
@@ -177,10 +176,12 @@
 	margin-right: 15px;
   }
   
-  
+  select, option {
+	  cursor: pointer;
+  }
   
   select {
-  
+	background: transparent;
 	color: var(--font-color);
 	border: none;
 	font-size: 18px;
@@ -189,6 +190,10 @@
 	border-radius: 5px;
   }
   
+
+  select:focus {
+	  outline: none;
+  }
   
   
   select > option {
