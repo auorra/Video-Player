@@ -10,13 +10,25 @@ const duration = document.querySelector('.time-duration');
 const fullscreenBtn = document.querySelector('.fullscreen');
 
 //Play & Pause
+
+function showPlayIcon() {
+	playBtn.classList.replace('fa-pause', 'fa-play');
+	playBtn.setAttribute('Pause', 'title');
+}
+
 function togglePlay() {
 	if (video.paused) {
 		video.play();
+		playBtn.classList.replace('fa-play', 'fa-pause');
+		playBtn.setAttribute('title', 'Pause');
 	} else {
 		video.pause();
+		showPlayIcon()
 	}
 }
+
+//On Video End, Show play button icon
+video.addEventListener('ended', showPlayIcon);
 
 //Event Listeners
 playBtn.addEventListener('click', togglePlay);
