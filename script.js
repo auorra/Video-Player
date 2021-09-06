@@ -25,7 +25,7 @@ function togglePlay() {
 		playBtn.setAttribute('title', 'Pause');
 	} else {
 		video.pause();
-		showPlayIcon()
+		showPlayIcon();
 	}
 }
 
