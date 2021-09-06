@@ -36,6 +36,8 @@ video.addEventListener('ended', showPlayIcon);
 //Progress Bar
 
 
+
+
 //Calcuate display time format
 function displayTime(time) {
 	const minutes = Math.floor(time / 60);
@@ -52,9 +54,18 @@ function updateProgress() {
 }
 
 
+//Click to seek within the video
+function setProgress(e) {
+	const newTime = e.offsetX / progressRange.offsetWidth;
+	progressBar.style.width = `${newTime * 100}%`;
+	video.currentTime = newTime * video.duration;
+	
+}
+
 
 //Event Listeners
 playBtn.addEventListener('click', togglePlay);
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
+progressRange.addEventListener('click', setProgress);
