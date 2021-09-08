@@ -65,7 +65,8 @@ function setProgress(e) {
 
 //Event Listeners
 playBtn.addEventListener('click', togglePlay);
-playBtn.addEventListener('click', togglePlay);
+video.addEventListener('click', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
 progressRange.addEventListener('click', setProgress);
+volumeRange.addEventListener('click', changeVolume);
